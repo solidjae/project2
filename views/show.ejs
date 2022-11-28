@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    
+    <nav class=".navbar .navbar-expand-lg bg-dark navbar-dark py-5" >
+        <div class="container-fluid text-center">
+            <a href="/" class="navbar-brand" style="font-size:larger"> Weather Tracking Website </a>
+        </div>
+    </nav>
+    <div class="container border mt-5">
+        <div class="row mx-auto mt-4">
+           
+            <p>City: <%=data.city%></p> <br>
+            <p>Date: <%=data.date%></p> <br>
+            <p>Temperature: <%=data.temperature%></p> <br>
+            <p>Description: <%=data.description%></p> <br>
+            <a class="btn btn-secondary" href="./edit/<%=data.id%>">Edit this log</a>
+            <form class="mw-100" action="/logs/delete/<%=data.id%>?_method=DELETE" method="POST">
+                <input class="btn btn-danger"type="submit" value="Delete "/>
+            </form>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
